@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+             .borderColor{
+        border:1px solid red;
+    }
+        </style>
+    </head>
+    <body>
+
+
+        <form onsubmit="return submitForm(event)" novalidate>
+
+            <input type="text" required pattern="[A-Za-z]+"/>
+            <span id="error"></span>
+            <input type="submit" value="Register"/>
+        </form>
+        <script>
+        
+            function submitForm(ev){
+                if(!document.querySelector("input[type=text]").validity.valid)
+                {   
+                    document.querySelector("input[type=text]").className="borderColor";
+                    showNameError();
+                    return false;
+                }
+                else
+                    return true;
+                
+            }
+        
+            function showNameError(){
+                if(document.querySelector("input[type=text]").validity.valueMissing)
+                    document.querySelector("#error").textContent="The name is empty";
+                else  if(document.querySelector("input[type=text]").validity.patternMismatch)
+                    document.querySelector("#error").textContent="Pattern does not match";
+           
+            }
+        
+        </script>
+
+
+
+    </body>
+</html>

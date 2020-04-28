@@ -1,0 +1,115 @@
+<html>
+
+<style>
+
+    .c1{
+        background-color:green;
+    }
+    .c2{
+        background-color:red;
+    }
+    .c3{
+        background-color:orange;
+    }
+    .c4
+    {
+        background-color:black; 
+    }
+
+    div{
+        border-radius:50%;
+        border: solid;
+        width:15%;
+        height: 20%;
+    }
+
+    .borderColor{
+        border:1px solid red;
+    }
+
+</style>
+<body>
+
+<form onsubmit="return submitForm(event)" novalidate>
+
+    <input type="text" required pattern="[A-Za-z]+"/>
+    <span id="error"></span>
+    <input type="submit"/>
+</form>
+<script>
+
+    function submitForm(ev){
+        if(!document.querySelector("input[type=text]").validity.valid)
+        {   
+            document.querySelector("input[type=text]").className="borderColor";
+            showNameError();
+            return false;
+        }
+        else
+            return true;
+        
+    }
+
+    function showNameError(){
+        if(document.querySelector("input[type=text]").validity.valueMissing)
+            document.querySelector("#error").textContent="The name is empty";
+        else  if(document.querySelector("input[type=text]").validity.patternMismatch)
+            document.querySelector("#error").textContent="Pattern does not match";
+   
+    }
+
+</script>
+
+
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div> 
+
+<input type="button" onclick="start()" value="Start"/>
+<input type="button" onclick="stop()" value="Stop"/>
+<script>
+
+    var timer;
+    var count;
+    function start(){
+        count=1;
+        timer= setInterval(changeColor, 3000);
+    }
+
+    function stop(){
+        clearInterval(timer);
+    }
+
+    function changeColor(){         
+        var arr= document.querySelectorAll("div");
+        if(count==1){
+            arr[0].className="c1";
+            arr[1].className="c4";
+            arr[2].className="c4";
+            count++;
+        }
+        else if(count==2){
+            arr[0].className="c4";
+            arr[1].className="c2";
+            arr[2].className="c4";
+            count++;
+        }
+        else if(count==3){
+            arr[0].className="c4";
+            arr[1].className="c4";
+            arr[2].className="c3";
+            count=1;
+        }
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<html>
+   <head>
+      <style type="text/css">
+         #boxA, #boxB, #boxa1, #boxa2, #boxa3 {
+            float:left;padding:10px;margin-left:10px;-moz-user-select:none; border: solid;margin-right:10px;
+         }
+         #boxa3 { background-color: blue; border-radius: 50%; margin-right: 10px;  }
+         #boxA { background-color: orangered; width:75px; height:25px; }
+         #boxB { background-color: cornflowerblue; width:150px; height:200px; }
+         #boxa1 { background-color: white; width:75px; height:25px; }
+         #boxa2 { background-color: green; width:75px; height:25px; }
+      </style>
+      <script type="text/javascript">
+         function dragStart(ev) {
+            ev.dataTransfer.effectAllowed='move';
+            ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+            ev.dataTransfer.setDragImage(ev.target,0,0);
+            return true;
+         }
+         function dragEnter(ev) {
+            event.preventDefault();
+            return true;
+         }
+         function dragOver(ev) {
+            return false;
+         }
+         function dragDrop(ev) {
+            var src = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(src));
+            ev.stopPropagation();
+            return false;
+         }
+      </script>
+   </head>
+   <body>
+      <center>
+         <h2>INDIAN FLAG</h2>
+         <div>Try to move the all the box according to the order Orange, white and green.</div>
+         <div id="boxA" draggable="true" ondragstart="return dragStart(event)">
+        
+         </div>
+         <div id="boxa1" draggable="true" ondragstart="return dragStart(event)"  ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">
+          
+         </div>
+         <div id="boxa2" draggable="true" ondragstart="return dragStart(event)"> 
+         </div>
+
+
+        </div>
+        <div id="boxa3" draggable="true" ondragstart="return dragStart(event)"> 
+        </div>
+
+         <div id="boxB" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)">INDIA</div>
+      </center>
+   </body>
+</html>

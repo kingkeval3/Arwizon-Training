@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form name="frmRegister" id="frmRegister">
+    <label>Email Address:<br><input name="txtemail" id="txtemail" required="required" type="email"></label><span id="sp1"></span><br>
+    <label>Age:<br><input name="psw" id="psw" required="required" type="number" min="18" max="60"></label><span id="sp2"></span>
+    <input type="submit" value="Register.."> 
+    </form>
+    <script type="text/javascript">
+    function validEmail(evt){
+    var el=evt.target;
+    if(el.validity){
+    // html5 aware browsers
+    if(el.validity.typeMismatch){
+    // el.setCustomValidity('Please enter a valid email address.');
+    document.querySelector("#sp1").textContent="Enter Valid Email Address";
+    document.querySelector("#sp1").style.color="red";
+
+    }else{
+    el.setCustomValidity("");
+    }
+    }else{
+    // legacy validation
+    }
+    }
+
+
+    function validPass(evnt){
+    var pl=evt.target;
+    if(pl.validity){
+    // html5 aware browsers
+    if(pl.validity.rangeUnderflow){
+    // el.setCustomValidity('Please enter a valid email address.');
+    document.querySelector("#sp2").textContent="Sorry, your age does now qualify with our terms";
+    document.querySelector("#sp2").style.color="red";
+
+    }else{
+        document.querySelector("#sp2").textContent="";
+    }
+    }else{
+    // legacy validation
+    }
+    }
+
+
+    document.getElementById('txtemail').addEventListener('blur',validEmail,false);
+    document.getElementById('psw').addEventListener('blur',validEmail,false);
+    </script>
+    
+    
+    </body>
+
+</html>

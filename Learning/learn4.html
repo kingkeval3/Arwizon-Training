@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<p id="nm"></p>
+
+
+<script>
+
+class human{
+    constructor(gndr){
+        this.gndr=gndr;
+    }
+}
+class employee extends human  {
+  constructor(fname,lname,gndr) {
+      super(gndr)
+    this.fn = fname;
+    this.ln = lname;
+
+  }
+ 
+   disp() {
+
+document.querySelector("#nm").textContent = `${this.fn} ${this.ln} ${this.gndr} `;
+console.log(`${nme.fn} ${nme.ln}`);
+  }
+
+}
+
+nme = new employee("Keval","Jain","male");
+nme.disp();
+
+
+console.log(firstName);
+
+</script>
+</body>
+</html>

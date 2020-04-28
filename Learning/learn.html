@@ -1,0 +1,292 @@
+<html>
+
+<head></head>
+
+<body>
+
+        <!-- <button type="button" onclick="myFunction()">Click me</button>
+
+        <p id="demo"></p>
+        
+        <script>
+        function myFunction() {
+          document.querySelector("#demo").textContent = "Your name is " + document.querySelector("#disp1").value;
+        } -->
+
+
+<!-- 
+        <p >Please select your gender:</p>
+        <input type="radio" class=".gend" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" class=".gend" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" class=".gend" id="other" name="gender" value="other">
+        <label for="other">Other</label>
+
+        
+        <button type="button" onclick="myFunction()">Click me</button>
+
+        <p id="demo"></p>
+        
+        <script>
+        function myFunction() {
+          document.querySelector("#demo").textContent = "Your Gender " + document.querySelector("input[type=radio]:checked").value;
+        }
+    </script>
+ -->
+
+ <html>
+	<head>
+		<title>Learning Area</title>
+
+	</head>
+<body style="text-align: left;">
+    <form>
+    <h2>Personal Information:</h2>
+<input type="text" id="myText" placeholder="Your First Name" onfocus="changeColor()"/> <span id="sp1"></span>
+<br>Your First Name is : <p id="demo1"></p>
+
+<br>
+<input type="text" id="myTxt" placeholder="Your Last Name"/> 
+<br>Your Last Name is : <p id="demos"></p>
+
+Your Full Name:
+<input type="text" id="country" name="country"  readonly><br>
+
+<br>
+<input type="date" id="myDb" placeholder="Your Date of  Birth"/> 
+<br>Your D.O.B is : <p id="demo2"></p>
+
+
+<input type="email" id="myEm" placeholder="name@example.com" onchange="emp()"/> <span id="sp2"></span>
+<br>Your given Email is : <p id="demo3"></p>
+
+
+<input type="password" id="myPs" placeholder="Desired Password"/> 
+<br>Confirm entered Password : <p id="demo4"></p>
+
+
+	<h2>Preferred Cities:</h2>
+	<input type="checkbox" name="acs" value="Bangalore">Bangalore<br>
+	<input type="checkbox" name="acs" value="Chennai">Chennai<br>
+	<input type="checkbox" name="acs" value="Hyderabad">Hyderabad<br>
+	<input type="checkbox" name="acs" value="Kochi">Kochi<br>
+	
+Preferred City/ Cities :<p id="prc"></p> <span id="cbv"></span>
+
+
+
+<p> 
+    Gender: 
+    <select id="select1"> 
+        <option value="0">Select</option> 
+        <option value="Male">M</option> 
+        <option value="Female">F</option> 
+        <option value="Other">Other</option> 
+    </select> 
+</p> 
+<span id="sb"></span>
+<p > 
+    Your Selected Gender  : 
+    <span class="output" ></span> 
+</p> 
+<lable>Your Resume</lable>
+<input onchange="ValidateSize(this)" type="file" id="fle"/><span id="fer"></span>
+  <br><br>
+<button type="button" onclick="printChecked()"> 
+    Preview my Data
+</button> 
+</form>
+    <script >
+        //file size validation
+        function ValidateSize(file) {
+        var FileSize = file.files[0].size / 1024 / 1024; // in MB
+        if (FileSize > 2) {
+            document.querySelector("#fer").textContent="File size exceeds 2mb";
+            document.querySelector("#fer").style.color="red";
+document.querySelector("#fle").value="";
+           
+           // $(file).val(''); //for clearing with Jquery
+        } else {
+
+            document.querySelector("#fer").textContent="";
+        }
+    }
+
+
+
+//     var oFile = document.getElementById("fileUpload").files[0]; // <input type="file" id="fileUpload" accept=".jpg,.png,.gif,.jpeg"/>
+
+// if (oFile.size > 2097152) // 2 mb for bytes.
+// {
+//     alert("File size must under 2mb!");
+//     return;
+// }
+
+
+//bg color
+// function changeColor(){
+//                 document.querySelector("#myText").style.backgroundColor="yellow";
+
+//             }
+
+//email match
+
+// function emp(){
+//     var em=  document.querySelector("#myEm").value;
+//    var ept="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
+
+//    if(em.search(ept)==-1){
+//        document.querySelector("#sp2").textContent="Please match the required pattern";
+//    }
+
+//    else{
+//        document.querySelector("#sp2").textContent="";
+//    }
+// }
+
+// checkbox
+        function printChecked(){
+            var items=document.querySelectorAll("input[type=checkbox]:checked");
+            var selectedItems="";
+            for(var i=0; i<items.length; i++){
+
+                    selectedItems+=items[i].value+"\n";
+            }
+            var cb= document.querySelector("#prc");
+            document.querySelector("#prc").textContent = selectedItems;
+            cb.style.color="blue";
+    if(selectedItems.length==0){
+       document.querySelector("#cbv").textContent="Select atleast one of the options";
+       document.querySelector("#cbv").style.color="red";
+    }
+    else{
+        document.querySelector("#cbv").textContent="";
+    }
+
+
+// for dropdown
+            selectElement =  document.querySelector('#select1'); 
+                      
+            output = selectElement.value; 
+            var dropt=document.querySelector('.output');
+            dropt.textContent = output; 
+             dropt.style.color= "blue";
+
+//dropdown validation
+
+var e = document.getElementById("select1");
+        var optionSelIndex = e.options[e.selectedIndex].value;
+        var optionSelectedText = e.options[e.selectedIndex].text;
+        if (optionSelIndex == 0) {
+            document.querySelector("#sb").textContent="Select Your Gender";
+       document.querySelector("#sb").style.color="red";
+    // alert("Please select a Course");
+        }
+        else {
+            document.querySelector("#sb").textContent="";
+            // alert("Success !! You have selected Course : " + optionSelectedText); ;
+        }
+    
+//first name
+        var x =  document.querySelector("#myText").value; 
+           
+
+            var txt= document.querySelector("#demo1");
+           txt.textContent = x;
+           txt.style.color="blue"; 
+
+
+           //pattern match
+
+
+    var ip= document.querySelector("#myText").value;
+   var pt="^[A-Za-z]+$";
+
+   if(ip.search(pt)==-1){
+   
+       document.querySelector("#sp1").textContent="Please match the required pattern";
+       document.querySelector("#sp1").style.color="red";
+   }
+
+   else{
+       document.querySelector("#sp1").textContent="";
+   }
+
+   if(ip==""){
+   document.querySelector("#myText").style.borderColor="red";
+}
+
+
+//last name
+           var ln =  document.querySelector("#myTxt").value; 
+           
+
+           var txt= document.querySelector("#demos");
+          txt.textContent = ln;
+          txt.style.color="blue"; 
+
+
+
+          //full name
+          var fnm =  document.querySelector("#myText").value; 
+          var lnm =  document.querySelector("#myTxt").value; 
+           
+
+           var flnm= document.querySelector("#country");
+          flnm.value = fnm+" "+lnm;
+          flnm.style.color="blue"; 
+
+
+//date of birth
+var y =  document.querySelector("#myDb").value; 
+     
+
+            var txt= document.querySelector("#demo2");
+           txt.textContent = y;
+           txt.style.textDecoration="underline overline"; 
+
+           //email
+           var z =  document.querySelector("#myEm").value; 
+
+
+            var txt= document.querySelector("#demo3");
+           txt.textContent = z;
+           txt.style.color="blue"; 
+
+           //email validation
+
+           var em=  document.querySelector("#myEm").value;
+   var ept="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$";
+
+   if(em.search(ept)==-1){
+       document.querySelector("#sp2").textContent="Please match the required pattern";
+       document.querySelector("#sp2").style.color="red";
+   }
+   else{
+       document.querySelector("#sp2").textContent="";
+   }
+
+           //Password
+
+
+           var pass =  document.querySelector("#myPs").value; 
+
+
+var txt= document.querySelector("#demo4");
+txt.textContent = pass;
+txt.style.color="purple"; 
+
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
+
+</body>
+</html>

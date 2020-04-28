@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale-1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Arwizon</title>
+
+<link rel="stylesheet" href="../CSS/style.css">
+
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+ <style>
+     .sata {
+        font-weight: bold;
+  animation-name: sata;
+  animation-duration: 1s;
+  animation-iteration-count:infinite;
+
+}
+
+@keyframes sata {
+  from {text-decoration: solid; }
+  to {text-decoration: underline overline; }
+
+}
+
+.satb {
+      font-size: 30px;
+ font-weight: bolder;
+  animation-name: satb;
+  animation-duration: 5s;
+  animation-iteration-count:infinite;
+
+}
+
+@keyframes satb {
+  0% {text-decoration:wavy; font-size: 10px; }
+  75% {text-decoration: wavy; font-size: 30px;}
+  100% {text-decoration: wavy; font-size: 10px;}
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+ </style>
+
+</head>
+<body>
+<div class="container">
+<!--NAVIGATION BAR-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../images/a.png" alt="..." width="100px" height="100px">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://www.arwizon.com/portfolio/">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#service">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Shift to
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="media.html">Media</a>
+            <a class="dropdown-item" href="hello.html">Registration</a>
+            <a class="dropdown-item" href="counter.html">Job Openings</a>
+            <a class="dropdown-item" href="covid.html">Covid Updates</a>
+          </div>
+        </li>
+
+
+
+
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Contact us here!</button></a>
+          </li>
+
+     
+       
+          
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Recipient:</label>
+                      <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<!--SLIDER-->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" style="margin-bottom: 50px;">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../images/c.jpg" class="d-block w-100" alt="..." width="500px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="sata" style="color: black;">Welcome to Arwizon</h5>
+          <p class="satb" style="color: black;">Simplifying digital trusted digital partners.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../images/c2.jpg" class="d-block w-100" alt="..." width="500px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="sata" >Lets Get Started</h5>
+          <p class="satb" >We specialize in bringing simplifying and innovative solutions.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../images/c3.jpg" class="d-block w-100" alt="..." width="500px" height="500px">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="sata" >Lets Begin Journey</h5>
+          <p class="satb" >We specialize in Retail, Manufacturing, Healthcare, Oil and Gas.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+      <!--CARDS-->
+      <div class="row" style="margin-bottom: 50px;" id="service">
+        <div class="card col-sm-6 col-md-3 ">
+          <img src="../images/retail.png" class="card-img-top" alt="..." height="210px">
+          <div class="card-body">
+            <h5 class="card-title">Retail</h5>
+            <p class="card-text">Arwizon Digital offers our retail industry customers, a wide range of packaged solutions such as Inventory management, Digital Asset Management backed by the know-how accumulated through our partnership with the world’s leading retailers.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card col-sm-6 col-md-3">
+          <img src="../images/manufacture.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Manufacture</h5>
+            <p class="card-text">Arwizon Digital helps automotive manufacturers increase productivity and accelerate revenue growth through innovative solutions that improve the overall efficiency, reduce inventory and enable better reporting.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card col-sm-6 col-md-3 ">
+            <img src="../images/health.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Healthcare</h5>
+              <p class="card-text">Arwizon Digital works with some of the top health care companies in the world to deliver a truly world-class user experience that is generally found lacking in the current mobile apps. </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+        <div class="card col-sm-6 col-md-3 ">
+          <img src="../images/og.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Oil and Gas</h5>
+            <p class="card-text">Arwizon Digital has an excellent track record of successfully delivering projects in the O&G (oil and gas) industry. Our clients largely benefit from Maximization of their assets, Improved efficiency by automation, Improved Master data</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Content-->
+
+<div class="row" id="about">
+      <div class="col-sm-6 card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="../images/arwizon.jpg" class="card-img" alt="..." height="180px">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">About Company</h5>
+              <p class="card-text">We are headquartered in the silicon city of India, Bangalore and currently having a business partnership with HikeOn Inc in Texas, USA. A rapidly growing team, with experienced resources to meet the rapid growth in clientele. We cater to the Small and Medium Business (SMB) segment.</p>
+              <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-6 card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="../images/ceo.jpg" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">About CEO</h5>
+              <h6 class="card-title">Mr. Rajesh Vedhamurthy</h5>
+              <p class="card-text">The CEO is ultimately responsible for the success or failure of the organization. As such, the CEO oversees the organization's various functions, including compliance, finance, human resources, legal, marketing, operations, sales and technology. </p>
+              <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+     <!-- Site footer -->
+     <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>Location</h6>
+            <p class="text-justify">Arwizon<i> Digital Private Limited </i></p>
+            <p class="text-justify">INDIA | USA</p>
+          </div>
+
+
+
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="http://www.arwizon.com/services/retail/">Retail</a></li>
+              <li><a href="http://www.arwizon.com/services/manufacturing/">Manufacturing</a></li>
+              <li><a href="http://www.arwizon.com/services/healthcare/">Healthcare</a></li>
+              <li><a href="http://www.arwizon.com/services/oil-gas/">Oil and Gas</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://www.arwizon.com/about/">About Us</a></li>
+              <li><a href="http://www.arwizon.com/services/">Services</a></li>
+              <li><a href="#" data-toggle="modal"  data-target="#exampleModal" >Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+         <a href="#">Arwizon Digital Private Limited</a>.
+            </p>
+          </div>
+
+          <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div> -->
+        </div>
+      </div>
+</footer>
+
+
+ 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </div>
+</body>
+</html>

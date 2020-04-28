@@ -1,0 +1,95 @@
+<html>
+<title>Visit Count</title>
+<head></head>
+<style>
+    #circle1 {
+        margin-top: 50px ;
+    background: black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+#circle2 {
+        margin-top: 50px ;
+    background: black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+#circle3 {
+        margin-top: 50px ;
+    background: black;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+</style>
+
+<body>
+
+
+    <div class="container" style="margin-bottom: 50px;">
+        <h2 id="result"></h2>
+          <p>Refresh the page to know the total visit count </p>
+          <span id="span1"></span>
+          <button onclick="startTime()">Start again</button>
+          <button onclick="stopTime()">Stop time</button>
+          
+        </div>
+
+        <button onclick="startL()">Start Signal</button>
+        <button onclick="stopL()">Stop Signal</button>
+        <div id="circle1"></div>
+        <div id="circle2"></div>
+        <div id="circle3"></div>
+        
+ 
+        <script>
+//COUNTER
+if (typeof Storage !== "undefined") {
+  if (localStorage.visitcount) {
+    document.querySelector("#result").textContent =
+      "Welcome back, you've been here " +
+      localStorage.visitcount +
+      " times before.";
+    localStorage.visitcount = Number(localStorage.visitcount) + 1;
+  } else {
+    localStorage.visitcount = 1;
+    document.querySelector("#result").textContent =
+      "This is your first time here! Welcome.";
+  }
+  // document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+} else {
+//    alert("Sorry, your browser does not support web storage.  Changes will not be saved");
+  document.querySelector("#result").textContent =
+    "Sorry, your browser does not support web storage...";
+}
+
+console.log("localstorage visit count now: " + localStorage.visitcount);
+
+// localStorage.clear();
+
+
+//LIVE TIME
+var tm;
+
+function mytime(){
+    var d=new Date();
+    document.querySelector("#span1").textContent=d.toLocaleTimeString();
+}
+
+function stopTime() {
+  clearInterval(tm);
+}
+
+function startTime(){
+   tm = setInterval(mytime, 1000)
+}
+
+ </script>
+
+
+
+</body>    
+
+</html>

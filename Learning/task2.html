@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Animation JQuery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <select id="myselect" required>
+            <option value="1">Show Hide Toggle</option>
+            <option value="2">Fade Toggle</option>
+            <option value="3">Slide Toggle</option>
+          </select>
+<br><br>
+
+          <div style="width: 100px; height: 100px; border: solid; background-color: blueviolet;">
+
+            
+        </div>
+        <button type="button">Animate</button>
+
+        <script>
+            $(document).ready(function(){
+  $("button").click(function(){
+    if ($("#myselect").val()!='1') {
+           $("div").toggle(2000);
+}
+else if($("#myselect").val()!='2') {
+    $("div").fadeToggle(2000);
+} else if($("#myselect").val()!='3') {
+    $("div").slideToggle(2000);
+}    
+  });
+});
+        </script>
+    </body>
+</html>

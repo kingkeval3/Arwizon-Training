@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("div").css({"background-color":"chartreuse","width":"200px","height":"100px"}).attr("title","Testing");
+  $("#sh").click(function(){
+    $("div").slideToggle();
+  });
+
+});
+</script>
+</head>
+<body>
+    <p>Try the following button</p>
+<div></div>
+<button id="sh">Show/Hide</button>
+
+</body>
+</html>
